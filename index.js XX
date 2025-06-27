@@ -1,6 +1,6 @@
-const login = require("fb-chat-api");
+const login = require("./fb-chat-api");
 
-login({ email: "nsjsjsnsskskakk@gmail.com", password: "nguyenphuonglinh209" }, (err, api) => {
+login({ email: "nsjssjnsskskakk@gmail.com", password: "nguyenphuonglinh209" }, (err, api) => {
   if (err) return console.error(err);
 
   api.listenMqtt((err, message) => {
@@ -8,10 +8,11 @@ login({ email: "nsjsjsnsskskakk@gmail.com", password: "nguyenphuonglinh209" }, (
 
     if (message.body === "•spam") {
       const spamText = "chippctee";
-      const spamArray = Array(120).fill(spamText);
+      const spamArray = Array(100).fill(spamText);
       spamArray.forEach((text) => {
         api.sendMessage(text, message.threadID);
       });
     }
   });
-});// bot mẹ chip đây nàiii 🎋
+});
+
